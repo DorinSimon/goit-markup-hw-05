@@ -69,14 +69,20 @@ ul {
   fill: var(--text-color-bleu);
 }
 
-.link-style:hover {
+.link-style:hover,
+.link-style:focus {
   color: var(--text-color-bleu);
   padding-bottom: 28px;
   border-bottom: 4px solid #2196f3;
   border-radius: 2px;
-  
 }
 
+.link-style::after{
+  content: '';
+  padding-bottom:28px ;
+  border-bottom:4px solid #2196f3;
+  border-radius: 2px; ;
+}
 
 .header-container {
   display: flex;
@@ -377,11 +383,21 @@ header {
 .image-description {
   display: flex;
   position: absolute;
+  top:294px;
   width: 100%;
   height: 70px;
   background: rgba(47, 48, 58, 0.8);
   justify-content: center;
   align-items: center;
+  transform: translateY(102%);
+    transition: transform 250ms linear;
+}
+.image-skills li{
+  position:relative;
+  overflow: hidden;
+}
+.image-skills li:hover .image-description{
+  transform: translateY(-70px);
 }
 /*our team*/
 .team-section {
